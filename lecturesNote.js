@@ -6,14 +6,9 @@
 // When a certain method (or property) is called, the search starts in the object itself, and if it cannot be found, the search moves on to the object's prototype.
 // This continues until the method is found: PROTOTYPE CHAIN.
 
-
-
 // ==========================================================
 
-
-
 // Function Constructor
-
 
 const john = {
     name: 'John',
@@ -41,7 +36,6 @@ const mike = new Person('Mike', 1956, 'Driver');
 const jane = new Person('Jane', 1387, 'Designer');
 const tom = new Person('Tom', 1008, 'Dead');
 
-
 mike.calculateAge();
 jane.calculateAge();
 tom.calculateAge();
@@ -50,12 +44,7 @@ console.log(mike.lastName);
 console.log(jane.lastName);
 console.log(tom.lastName);
 
-
-
-
 // =============================================================================================================================================
-
-
 
 // CREATING OBJECT: Object.create
 
@@ -94,11 +83,7 @@ const mike = Object.create(personProto, {
 // And that is because 'Object.create' allows us to directly specify which object should be a prototype.
 // As of today, Function Constructors remain the most popular??
 
-
-
 // =============================================================================================================================================
-
-
 
 // PRIMITVES VS Objects
 
@@ -163,11 +148,7 @@ console.log(obj.city);
 // But when we pass an object, we are simply passing a reference to the object instead of the object itself.
 // Therefore when we change the object inside of the function, it is still reflected outside of the function.
 
-
-
 // =============================================================================================================================================
-
-
 
 // FIRST CLASS FUNCTIONS: Passing functions as arguments.
 
@@ -211,23 +192,17 @@ function maxHeartRate(el) {
     } else {
         return -1;
     }
-
 };
 
 let ages = arrayCalc(years, calculateAge);
 let fullAges = arrayCalc(ages, isFullAge);
 let rates = arrayCalc(ages, maxHeartRate);
 
-
 console.log(ages);
 console.log(fullAges);
 console.log(rates);
 
-
-
 // =============================================================================================================================================
-
-
 
 // FIRST CLASS FUNCTIONS: Functions returning FUNCTIONS
 
@@ -267,12 +242,7 @@ designerQuestion('Mike');
 cookQuestion('Cory');
 // With this method, we can basically write one generic function, which in this case is the 'interviewQuestion' and the create a bunch of more specific functions based on that generic function.
 
-
-
-
 // =============================================================================================================================================
-
-
 
 // Immediately invoked function expressions (IIFE)
 
@@ -314,11 +284,7 @@ game();
 // Therefore, JavaScript will know to treat this as an expression and not as a declaration.
 // After that, all that is left to do is to invoke the function.
 
-
-
 // =============================================================================================================================================
-
-
 
 // CLOSURES
 
@@ -371,7 +337,6 @@ retirementFR(1983);
 let retirementBEL = retirement(50);
 retirementBEL(1983);
 
-
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -388,7 +353,6 @@ function interviewQuestion(job) {
     }
 };
 
-
 function interviewQuestion(job) {
     return function(name) {
         if (job === 'designer') {
@@ -403,10 +367,7 @@ function interviewQuestion(job) {
 
 interviewQuestion('teacher')('John');
 
-
-
 // =============================================================================================================================================
-
 
 // BIND, CALL AND APPLY METHODS
 
@@ -449,7 +410,6 @@ john.presentation('formal', 'morning');
 john.presentation.apply(emily, ['friendly', 'afternoon']); // Now this will not work in this case as we did not pass an array as an argument in the 'presentation' function of the 'john' object.
 
 
-
 // The '.bind' Method:
 
 // Very similar to the call method as well which allows us to set the 'this' variable explicitly.
@@ -472,7 +432,6 @@ johnFriendly('night');
 
 let emilyFormal = john.presentation.bind(emily, 'formal');
 emilyFormal('afternoon');
-
 
 let years = [1990, 1965, 1937, 2005, 1998];
 function arrayCalc (arr, fn) {
