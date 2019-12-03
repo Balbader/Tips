@@ -21,7 +21,7 @@ const john = {
     job: 'teacher',
 };
 
-//ROT: Always make sure to capitalize the first letter of the name of a Function Constructor (i.e. Person)!!!
+//NOTE: Always make sure to capitalize the first letter of the name of a Function Constructor (i.e. Person)!!!
 const Person = function(name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
